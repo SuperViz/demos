@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});var e=require("./osParser.js");require("./utils.js");exports.OS_MAP=e.OS_MAP;exports.getOS=e.getOS;exports.getOSName=e.getOSName;exports.getOSVersion=e.getOSVersion;exports.getOSVersionName=e.getOSVersionName;exports.isOS=e.isOS;exports.osParser=e.osParser;

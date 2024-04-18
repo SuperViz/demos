@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});var e=require("./parser.js");exports.getParser=e.getParser;exports.isAnything=e.isAnything;exports.isSome=e.isSome;exports.parse=e.parse;
