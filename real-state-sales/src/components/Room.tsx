@@ -1,108 +1,64 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { SuperVizRoomProvider } from '@superviz/react-sdk'
+import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { OnBoarding, Room } from 'src/components'
+import { MatterportIframe, VideoConference } from '@superviz/react-sdk'
+import { VideoConferenceStyles } from 'src/assets/constants/VideoConferenceStyles'
 
-export const DemoPage: React.FC = () => {
-	const key = import.meta.env.VITE_DEVELOPER_KEY
+const matterportKey = import.meta.env.VITE_MATTERPORT_KEY
 
+export default function Room() {
 	const [searchParams] = useSearchParams()
-	const roomId = searchParams.get('roomId') || ''
-	const userName = searchParams.get('userName') || ''
-	const skipTour = searchParams.get('complete') === 'true'
-	const [modalIsOpen, setModalIsOpen] = useState(true)
-	const [videoConferenceisOpen, setVideoConferenceIsOpen] = useState(false)
-	const [isSingleView, setSingleView] = useState(true)
-	const uuid = useRef<string>(getRoomId('real-estate'))
+	const participantType = searchParams.get('participant-type') || ''
 
-	// frame loaded ::
-	const [loading, setLoading] = useState(false)
-	const [iFrameOneLoaded, setIframeOneLoaded] = useState(false)
-	const [iFrameTwoLoaded, setIframeTwoLoaded] = useState(false)
+	const [opacity, setOpacity] = useState(0)
+	const [mpSdk, setMpSdk] = useState<any>(null)
 
-	// check for both iframes loaded ::
 	useEffect(() => {
-		if (iFrameOneLoaded) setLoading(false)
-	}, [iFrameOneLoaded, iFrameTwoLoaded])
-	//-----------
+		if (mpSdk) {
+			setTimeout(() => {
+				const rotation = { x: 10, y: participantType ? 0 : 180 }
+				mpSdk.Sweep.moveTo('3ae0c820346e486ab08deef545650d87', { transition: mpSdk.Sweep.Transition.INSTANT, rotation })
+			}, 3000)
+		}
+	}, [mpSdk])
 
-	// participant joined ::
-	const [participantOneJoined, setParticipantOneJoined] = useState(false)
-	const audienceIframe = useRef<HTMLIFrameElement>(null)
+	// send message to parent when matterport iframe is loaded ::
+	const [loadedIframe, setLoadedIframe] = useState(false)
 
-	// check for participant one joined to load up video for participant 2 ::
 	useEffect(() => {
-		if (participantOneJoined) {
-			audienceIframe.current?.contentWindow?.postMessage('participant-one-joined-from-parent', '*')
-			setSingleView(false)
+		if (loadedIframe) {
+			window.parent.postMessage(participantType ? 'iframe-two-loaded' : 'iframe-one-loaded', '*')
 		}
-	}, [participantOneJoined])
-	//-----------
-
-	// Receive incoming messages from children ::
-	const receiveMessage = (event: MessageEvent) => {
-		switch (event.data) {
-			case 'participant-one-joined':
-				setParticipantOneJoined(true)
-				break
-			case 'iframe-one-loaded':
-				setIframeOneLoaded(true)
-				break
-			case 'iframe-two-loaded':
-				setIframeTwoLoaded(true)
-				break
-			case 'participant-left':
-				window.location.reload()
-				break
-			default:
-				return
-		}
-	}
-
-	window.addEventListener('message', receiveMessage)
-	//-----------
-
-	const handleOkModal = () => {
-		setModalIsOpen(false)
-		setVideoConferenceIsOpen(true)
-		setLoading(true)
-	}
-
-	if (roomId && userName) {
-		return (
-			<SuperVizRoomProvider
-				developerKey={key}
-				group={{
-					id: 'demos-whiteboard-group',
-					name: 'Demos: Whiteboard',
-				}}
-				participant={{
-					id: userName,
-					name: userName,
-				}}
-				environment='dev'
-				roomId={roomId}>
-				<Room />
-			</SuperVizRoomProvider>
-		)
-	}
+	}, [loadedIframe])
 
 	return (
-		<div className={isSingleView ? 'demo-container onboarding' : 'demo-container'}>
-			{videoConferenceisOpen && (
-				<>
-					<iframe className='demo-iframe' src={`/real-estate/?userName=Mary&roomId=${uuid.current}`} />
+		<>
+			<MatterportIframe
+				style={{ opacity }}
+				width={window.innerWidth}
+				height={window.innerHeight}
+				bundleUrl={`/vendor/matterport/showcase.html?&play=1&tour=0&search=0&qs=1&vr=0&hr=0&f=0&brand=0&gt=0&applicationKey=${matterportKey}&m=MCSDez4M2Xd`}
+				matterportKey={matterportKey}
+				onMpSdkLoaded={({ matterportSdkInstance }) => {
+					matterportSdkInstance.Sweep.current.subscribe(function (currentSweep) {
+						if (currentSweep.sid === '') return
 
-					<iframe
-						style={{
-							display: isSingleView ? 'none' : 'block',
-						}}
-						ref={audienceIframe}
-						className='demo-iframe'
-						src={`/real-estate/?userName=Richard&roomId=${uuid.current}&participant-type=true`}
-					/>
-				</>
-			)}
-		</div>
+						setMpSdk(matterportSdkInstance)
+					})
+				}}
+			/>
+
+			<VideoConference
+				enableFollow
+				enableGather
+				onConnectionStatusChange={() => setOpacity(1)}
+				skipMeetingSettings={participantType ? true : false}
+				participantType={participantType ? 'audience' : 'host'}
+				onMeetingStateChange={(state) => {
+					if (state === 1) setLoadedIframe(true)
+				}}
+				offset={{ top: -10, bottom: 0, left: 0, right: 0 }}
+				styles={VideoConferenceStyles}
+			/>
+		</>
 	)
 }

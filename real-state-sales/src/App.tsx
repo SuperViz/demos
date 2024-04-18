@@ -1,5 +1,5 @@
 import { SuperVizRoomProvider } from '@superviz/react-sdk'
-import Room from './components/Room';
+import Room from 'src/components/Room';
 
 const developerKey = import.meta.env.VITE_DEVELOPER_KEY;
 const userId = Math.floor(Math.random() * 1000).toString()
@@ -9,8 +9,8 @@ export default function App() {
 		<SuperVizRoomProvider
 			developerKey={developerKey}
 			group={{
-				id: 'demos-real-estate-sales-group',
-				name: 'Demos: Real Estate Sales',
+				id: 'demos-real-estate-group',
+				name: 'Demos: Real Estate',
 			}}
 			participant={{
 				id: userId,
