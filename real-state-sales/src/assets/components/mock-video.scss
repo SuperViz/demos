@@ -1,0 +1,70 @@
+.mock-video-frame {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 0px;
+	overflow: hidden; /* para evitar que a imagem ultrapasse os limites da div */
+	background: rgba(87, 83, 95, 0.5);
+	backdrop-filter: blur(10px);
+	width: 197px;
+	height: 112px;
+	position: absolute;
+	z-index: 99;
+	right: 12px;
+	top: 200px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.mock-video-frame > video {
+	width: 194px;
+	height: 102px;
+	margin: 4px;
+	border-radius: 6px;
+	max-width: 100%;
+}
+
+.mock-video-frame > div {
+	bottom: 0;
+	position: absolute;
+	z-index: 1000;
+	background: transparent;
+	color: white;
+	width: 100%;
+	height: 30%;
+	z-index: 1000;
+	font-family: Roboto, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	letter-spacing: normal;
+	font-weight: 700;
+	text-align: left;
+}
+
+.video-badge {
+	border-radius: 15px;
+	height: 9px;
+	width: 9px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 4px;
+}
+
+.participant-video-name {
+	text-shadow: 1px 1px 5px #000;
+}
+
+.mock-video-frame > .footer-video > .mic > img {
+	width: 26px;
+	height: 26px;
+}
+
+.mock-video-frame > .footer-video > .mic {
+	width: 10%;
+	margin-right: 12px;
+}
+.footer-video {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

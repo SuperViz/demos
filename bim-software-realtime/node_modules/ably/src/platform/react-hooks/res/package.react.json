@@ -1,7 +1,0 @@
-{
-  "main": "./cjs/index.js",
-  "exports": {
-    "require": "./cjs",
-    "import": "./mjs"
-  }
-}

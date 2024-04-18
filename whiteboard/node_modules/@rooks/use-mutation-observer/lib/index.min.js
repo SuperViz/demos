@@ -1,2 +1,0 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):(e="undefined"!=typeof globalThis?globalThis:e||self).useMutationObserver=t(e.React)}(this,(function(e){"use strict";var t={attributes:!0,characterData:!0,subtree:!0,childList:!0};return function(n,r,i=t){e.useEffect((()=>{if(n.current){const e=new MutationObserver(r);return e.observe(n.current,i),()=>{e.disconnect()}}}),[r,i])}}));
-//# sourceMappingURL=index.min.js.map

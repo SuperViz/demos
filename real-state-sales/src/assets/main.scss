@@ -1,0 +1,65 @@
+@import './components/badge.scss';
+@import './components/mock-video.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: black;
+}
+
+iframe {
+	border: none;
+	background: transparent;
+}
+
+.banner {
+	width: 100vw;
+	height: 100vh;
+}
+
+.modal-content-real-estate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.modal-content-real-estate > img {
+	margin-top: 8px;
+}
+
+.modal-content-real-estate > h3 {
+	margin: 24px 0px 16px 0px;
+	color: #39363e;
+	font-size: 22px;
+}
+
+.modal-content-real-estate > p {
+	margin-bottom: 56px;
+	font-size: 14px;
+}
+
+.demo-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 100vw;
+	gap: 0.5rem;
+}
+
+.demo-iframe {
+	flex: 1;
+	border-radius: 6px;
+}
+
+.onboarding {
+	background-color: #e5e5e5;
+	background-image: url('./img/background.jpg'), url('../img/background.jpg');
+	background-position: center;
+	background-size: cover;
+}
