@@ -1,0 +1,16 @@
+#root {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+#comments {
+	position: absolute;
+	width: 320px;
+	left: 0;
+	top: 0;
+}
+
+#reactflow {
+	height: 100%;
+	width: 100%;
+}
