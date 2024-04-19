@@ -1,24 +1,16 @@
 import { useRealtime } from "@superviz/react-sdk";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-export function Form({ participantId }: { participantId: string }) {  
+export function Form() {  
   const form = useRef<HTMLFormElement>(null);
   const [enableButton, setEnableButton] = useState(false);
   const { publish, subscribe } = useRealtime();
 
   const onSubmit = (e: FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
-    publish('submit', null);
   };
 
   useEffect(()=> {
-    subscribe('submit', (e: any)=> {
-      if (e.participantId === participantId) return;
-      const button = form.current?.querySelector('button');
-      button!.click();
-      button!.focus();
-    })
-
     subscribe('enable', ()=> {
       setEnableButton(true);
     });

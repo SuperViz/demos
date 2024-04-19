@@ -547,14 +547,14 @@
     lodash "^4.17.21"
     three-spritetext "^1.7.1"
 
-"@superviz/react-sdk@1.5.0-beta.6":
-  version "1.5.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@superviz/react-sdk/-/react-sdk-1.5.0-beta.6.tgz#05776a68f6e2583a3ee0f21efbe75c379578fa8c"
-  integrity sha512-9HoM/T+fkGVP9oAogvYiuxc9WaSbbfOHfgQoa1GwdzjpNBRtKxOx2vtsxyf6Cn1FfwGF/61lSCXrlB0OaKEliA==
+"@superviz/react-sdk@1.5.0-beta.8":
+  version "1.5.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@superviz/react-sdk/-/react-sdk-1.5.0-beta.8.tgz#d22dbbf742b95abb289b1da2da83c72610a6fffb"
+  integrity sha512-tsS9aEt7zDqPGkwdBslvkUGLqRuuXEmUohgM+7XTg74ippTdc7ZCzpEQ83WUIv4PRlIvDrwYUsMcgzQkBceH9w==
   dependencies:
     "@superviz/autodesk-viewer-plugin" "1.16.0"
     "@superviz/matterport-plugin" "0.19.0"
-    "@superviz/sdk" "6.1.0-lab.3"
+    "@superviz/sdk" "6.1.0-lab.4"
     "@superviz/threejs-plugin" "0.20.0-lab.8"
     lodash "^4.17.21"
     react "^18.2.0"
@@ -578,10 +578,10 @@
     rxjs "^7.8.1"
     semantic-release-version-file "^1.0.2"
 
-"@superviz/sdk@6.1.0-lab.3":
-  version "6.1.0-lab.3"
-  resolved "https://registry.yarnpkg.com/@superviz/sdk/-/sdk-6.1.0-lab.3.tgz#3676f71e1df15efee197d8fec4cc21402a0d19c1"
-  integrity sha512-JYv99YUdqXpDge3FELpzCj5EJDUJPSNosYUNx+ixoYGkk8vHKFrjqlbMnNTRMGoE+q4EdSdcz89PWrlyTHFquA==
+"@superviz/sdk@6.1.0-lab.4":
+  version "6.1.0-lab.4"
+  resolved "https://registry.yarnpkg.com/@superviz/sdk/-/sdk-6.1.0-lab.4.tgz#e510eecf28a1ae0e11cd4c7255534f4afc30f44f"
+  integrity sha512-1frFScB4BcUMfXr4P533ihhsYES+lzejk0EY4UjgkM7CkKZZH2rGNIKzC2FtvFx9dJiwZVPmMhgCdBHGlLH7ng==
   dependencies:
     "@superviz/socket-client" "1.2.2"
     ably "^1.2.45"

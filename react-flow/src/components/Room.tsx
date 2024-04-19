@@ -1,6 +1,7 @@
-import { MousePointers, WhoIsOnline, useHTMLPin, Comments, useComments } from '@superviz/react-sdk'
+import { MousePointers, WhoIsOnline, useHTMLPin, Comments, useComments, useMouse } from '@superviz/react-sdk'
 import { ReactFlowComponent } from './ReactFlow/ReactFlow'
 import { useViewport } from 'reactflow'
+import { useEffect } from 'react'
 
 export default function Room() {
 	const { x, y, zoom } = useViewport()
@@ -19,6 +20,14 @@ export default function Room() {
 	const onMountComments = () => {
 		openThreads()
 	}
+
+	const { transform } = useMouse();
+
+	useEffect(() => {
+		if (transform) {
+			transform({ translate: { x, y }, scale: zoom })
+		}
+	}, [x, y, zoom, transform])
 
 	return (
 		<>

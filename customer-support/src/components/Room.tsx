@@ -53,7 +53,7 @@ export default function Room({ participantId }: { participantId: string }) {
 
       <div className="page-wrapper">
         <main>
-          <Form participantId={participantId}/>
+          <Form />
         </main>
       </div>
       
