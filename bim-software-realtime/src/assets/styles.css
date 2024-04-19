@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+#root {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	margin: 0;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	background-color: #26242a;
+}
+
+#header {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	background-color: #39363e;
+	padding-inline: 10px;
+	height: 53px;
+	align-items: center;
+}
+
+.canvas-container {
+	flex: 1;
+	position: relative;
+}
+
+.canvas {
+	background-color: #eae4db;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.adsk-viewing-viewer {
+	width: 100%;
+	height: 100%;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.adsk-viewing-viewer #toolbar-modelStructureTool,
+.adsk-viewing-viewer #toolbar-explodeTool,
+.adsk-viewing-viewer #toolbar-fullscreenTool,
+.adsk-viewing-viewer #toolbar-settingsTool,
+.adsk-viewing-viewer #toolbar-propertiesTool,
+.adsk-viewing-viewer #toolbar-layers-tool,
+.adsk-viewing-viewer #toolbar-modelStructureTool,
+.adsk-viewing-viewer #toolbar-bimWalkTool,
+.adsk-viewing-viewer #toolbar-cameraSubmenuTool,
+.adsk-viewing-viewer #toolbar-cameraSubmenuToolarrow,
+.adsk-viewing-viewer #toolbar-calibrationTool,
+.adsk-viewing-viewer #toolbar-orbitTools,
+.adsk-viewing-viewer #toolbar-panTool,
+.adsk-viewing-viewer #toolbar-zoomTool,
+.adsk-viewing-viewer #toolbar-measureTool-angle,
+.adsk-viewing-viewer #measureTools,
+.adsk-viewing-viewer #toolbar-sectionTool {
+	display: none !important;
+}
+
+#modelTools {
+	background-color: #39363e;
+}

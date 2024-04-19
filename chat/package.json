@@ -1,0 +1,35 @@
+{
+	"name": "chat",
+	"private": false,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "vite --open /chat",
+		"dev": "vite --open /chat",
+		"build": "tsc && vite build",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@superviz/react-sdk": "1.5.0-beta.6",
+		"@superviz/sdk": "^5.5.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.21.2",
+		"styled-components": "^6.1.8"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.17",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"@vitejs/plugin-react": "^4.2.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"typescript": "^5.2.2",
+		"vite": "^5.0.8",
+		"vite-tsconfig-paths": "^4.2.3"
+	},
+	"main": "index.js",
+	"license": "MIT"
+}

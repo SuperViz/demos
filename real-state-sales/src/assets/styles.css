@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: black;
+}
+
+.modal-content-real-estate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.modal-content-real-estate > img {
+	margin-top: 8px;
+}
+
+.modal-content-real-estate > h3 {
+	margin: 24px 0px 16px 0px;
+	color: #39363e;
+	font-size: 22px;
+}
+
+.modal-content-real-estate > p {
+	margin-bottom: 56px;
+	font-size: 14px;
+}
