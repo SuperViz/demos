@@ -30,7 +30,7 @@ export function Form() {
     Object.values(data).forEach((value)=> {
       if (value) return;
       disableButton = true;
-    })
+    });
 
     if (disableButton) {
       publish('disable', null);
@@ -38,7 +38,7 @@ export function Form() {
     }
 
     publish('enable', null);
-  }
+  };
 
   return (
     <> 
