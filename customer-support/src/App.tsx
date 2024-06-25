@@ -15,12 +15,11 @@ export default function App() {
       }}
       participant={{
         id: userId,
-        name: `${userId  } Participant`,
+        name: `${userId} Participant`,
       }}
-      environment='dev'
       roomId='forms-demo'
     >
-      <Room participantId={userId}/>
+      <Room participantId={userId} />
     </SuperVizRoomProvider>
   );
 }

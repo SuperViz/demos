@@ -16,10 +16,9 @@ export default function App() {
 				id: userId,
 				name: userId + ' Participant',
 			}}
-			environment='dev'
 			roomId='chat-demo'
 		>
-			<Room id={userId} participantName={userId + ' Participant'}/>
+			<Room id={userId} participantName={userId + ' Participant'} />
 		</SuperVizRoomProvider>
 	)
 }

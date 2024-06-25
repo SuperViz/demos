@@ -16,7 +16,6 @@ export default function App() {
 				id: userId,
 				name: userId + ' Participant',
 			}}
-			environment='dev'
 			roomId='real-estate-demo'
 		>
 			<Room />

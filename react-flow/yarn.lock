@@ -622,35 +622,35 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
 
-"@superviz/autodesk-viewer-plugin@1.15.0-lab.10":
-  version "1.15.0-lab.10"
-  resolved "https://registry.yarnpkg.com/@superviz/autodesk-viewer-plugin/-/autodesk-viewer-plugin-1.15.0-lab.10.tgz#171d4230002ee6ffd4aed0554cf496c9a034710b"
-  integrity sha512-HzD0YKZ/g8wjV/BteBBJBpq+0XZTsbULDxBySvdi1Tc/FraXe9mhrw764t2roPfuzoA287wsKxHHYhJ9Zzz7wg==
+"@superviz/autodesk-viewer-plugin@1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@superviz/autodesk-viewer-plugin/-/autodesk-viewer-plugin-1.18.0.tgz#d1f26fc8a60fbd09ce0a5c9c14492e7d976794b0"
+  integrity sha512-F6/bjQwrGGZjRiaqJ5LbuhV0Ya1qg7KhvsPB/MuCZ6SOYVQVYQiVpPSdKZX2irM+MqmdRrb/wZYdUbXwmz57uw==
   dependencies:
     "@superviz/sdk" "6.1.0-lab.16"
     debug "^4.3.4"
     lodash "^4.17.21"
     three "0.139.2"
 
-"@superviz/matterport-plugin@0.17.0-lab.6":
-  version "0.17.0-lab.6"
-  resolved "https://registry.yarnpkg.com/@superviz/matterport-plugin/-/matterport-plugin-0.17.0-lab.6.tgz#8ed883b4dc413c8f7ffcc7dc02186c25f71ebcb7"
-  integrity sha512-uLD1g3bGNdicVmmIpIawM7n7Q063gqe4e539u01YeHIdhrdelejTKhO/JQ84uwTRTSmkNfGNeJivHM6AF+Amzg==
+"@superviz/matterport-plugin@0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@superviz/matterport-plugin/-/matterport-plugin-0.21.0.tgz#c069f09fa75dbf88cfa6e4b7b9dbcc6b7cf3c49d"
+  integrity sha512-wvJqijFOKWbUEpSKVbNDItQEoD2ydXZPf7Jsyp0dNg7fruG7wFUw2vWCFrXhLHfMWrJ8QT2ttJqla4sXXaGTpA==
   dependencies:
     "@superviz/sdk" "6.1.0-lab.16"
     debug "^4.3.4"
     lodash "^4.17.21"
     three-spritetext "^1.7.1"
 
-"@superviz/react-sdk@1.7.0-beta.2":
-  version "1.7.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@superviz/react-sdk/-/react-sdk-1.7.0-beta.2.tgz#5dc546e7271f11936a5fc982a92ef40f0a01f5f0"
-  integrity sha512-OJrb3+ZL9bRiZK1ytdp2vVmVGd3za+CElLNgzTFd1JOZbAufrD6gz8yKVOBuLTcIP32msU38ssyOAmAnZ3EMqg==
+"@superviz/react-sdk@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@superviz/react-sdk/-/react-sdk-1.8.0.tgz#aa2fb1cb3c608d522423e29d78ab9b0d053757e0"
+  integrity sha512-MYH2TkCOCdhXtPyQuAa7q0TSPkF4Gqjvac00j32Vw+I782jye1wfsNrBLFo9ZyOT85SvAQdutmbIpDcW070w3Q==
   dependencies:
-    "@superviz/autodesk-viewer-plugin" "1.15.0-lab.10"
-    "@superviz/matterport-plugin" "0.17.0-lab.6"
-    "@superviz/sdk" "6.1.0-lab.26"
-    "@superviz/threejs-plugin" "0.20.0-lab.12"
+    "@superviz/autodesk-viewer-plugin" "1.18.0"
+    "@superviz/matterport-plugin" "0.21.0"
+    "@superviz/sdk" "6.3.0"
+    "@superviz/threejs-plugin" "0.24.0"
     lodash "^4.17.21"
     react "^18.2.0"
     react-dom "^18.2.0"
@@ -673,12 +673,12 @@
     rxjs "^7.8.1"
     semantic-release-version-file "^1.0.2"
 
-"@superviz/sdk@6.1.0-lab.26":
-  version "6.1.0-lab.26"
-  resolved "https://registry.yarnpkg.com/@superviz/sdk/-/sdk-6.1.0-lab.26.tgz#8de1fd591b557819f605be6aea3d7e76c5815e14"
-  integrity sha512-zjwY0JY4lmBuNzu0RUzwGz/A68oUGYR+G6/Yr3jO6St9CFt+yVGVwDm6X1WbFBCu4GYk4Im+eDT8RIGCWiQniQ==
+"@superviz/sdk@6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@superviz/sdk/-/sdk-6.3.0.tgz#ae177015803e7528f26dcb89ed3824ae80b666be"
+  integrity sha512-OHaw8V/kj7flxLhMCfv5554m1Ih7ZXydblKYA32Dj0tlFQEHwcOGAeUF2B8F3bgeA5UGHSlQvlLFz0MH+V4COA==
   dependencies:
-    "@superviz/socket-client" "1.4.0"
+    "@superviz/socket-client" "1.5.1"
     ably "^1.2.45"
     bowser "^2.11.0"
     bowser-jr "^1.0.6"
@@ -704,10 +704,23 @@
     socket.io-client "^4.7.4"
     zod "^3.22.4"
 
-"@superviz/threejs-plugin@0.20.0-lab.12":
-  version "0.20.0-lab.12"
-  resolved "https://registry.yarnpkg.com/@superviz/threejs-plugin/-/threejs-plugin-0.20.0-lab.12.tgz#d87dfc0ac4ce3c2525164eefa2d0a17a9b8c0785"
-  integrity sha512-ynPtso6iojIUWLx1ZDoS21D1R8PWbLCLdAj5VY+61tHbISjgQyqEBh0rBxkdSLno3SHX+XxVGsSw6XsoS50V4g==
+"@superviz/socket-client@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@superviz/socket-client/-/socket-client-1.5.1.tgz#db1d14f6fbd29ac5e8cf3241dcf8b80cc42e814e"
+  integrity sha512-T+9vbYsKDPuHHrtKWZHLqHJTQ9uL4rQm8xm9OqqIr2E+c6kXkSIZsW40BKK6r45BTX4FT2i8rIS31BxptG5PRQ==
+  dependencies:
+    "@reactivex/rxjs" "^6.6.7"
+    debug "^4.3.4"
+    lodash "^4.17.21"
+    rxjs "^7.8.1"
+    semantic-release-version-file "^1.0.2"
+    socket.io-client "^4.7.4"
+    zod "^3.22.4"
+
+"@superviz/threejs-plugin@0.24.0":
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/@superviz/threejs-plugin/-/threejs-plugin-0.24.0.tgz#e8c0fe9f28ff32620b217642adc7c94525298a5c"
+  integrity sha512-CFdWQiVCE0sTYoQZ3MmhKqB6gb7UENMAGLZYizYqSB8xPQ2mNWR5Hz0ZLssjPXA5XrClemvemIQkOcF+fqZU2A==
   dependencies:
     "@superviz/sdk" "6.1.0-lab.16"
     debug "^4.3.4"

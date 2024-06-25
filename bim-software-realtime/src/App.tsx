@@ -16,7 +16,6 @@ export default function App() {
 				id: userId,
 				name: userId + ' Participant',
 			}}
-			environment='dev'
 			roomId='realtime-autodesk-demo'
 		>
 			<Room />
