@@ -1,9 +1,9 @@
-import { MousePointers, WhoIsOnline, useHTMLPin, Comments, useComments, useMouse } from '@superviz/react-sdk'
+import { MousePointers, WhoIsOnline, useHTMLPin, Comments, useComments, useMouse, Realtime } from '@superviz/react-sdk'
 import { ReactFlowComponent } from './ReactFlow/ReactFlow'
 import { useViewport } from 'reactflow'
 import { useEffect } from 'react'
 
-export default function Room() {
+export default function Room({ participantId }: { participantId: string }) {
 	const { x, y, zoom } = useViewport()
 	const { openThreads } = useComments()
 
@@ -32,10 +32,11 @@ export default function Room() {
 	return (
 		<>
 			<div id='comments'></div>
+			<Realtime />
 			<WhoIsOnline />
 			<Comments pin={pin} onPinActive={handleOpenThreads} onMount={onMountComments} position='left' />
 			<MousePointers elementId='reactflow' transform={{ translate: { x, y }, scale: zoom }} />
-			<ReactFlowComponent />
+			<ReactFlowComponent participantId={participantId} />
 		</>
 	)
 }

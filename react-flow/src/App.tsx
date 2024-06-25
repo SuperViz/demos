@@ -18,7 +18,7 @@ export default function App() {
 			}}
 			roomId='react-flow-demo'
 		>
-			<Room />
+			<Room participantId={userId} />
 		</SuperVizRoomProvider>
 	)
 }
