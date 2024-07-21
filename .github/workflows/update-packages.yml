@@ -1,0 +1,40 @@
+name: Update packages
+
+on:
+  repository_dispatch:
+    types: [new-release]
+
+jobs:
+  update:
+    name: Update package
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Update package for each subdirectory
+        run: |
+          for dir in $(find . -mindepth 1 -maxdepth 1 -type d ! -path "./.git*"); do
+            cd "$dir"
+            echo "Updating package for $dir"
+            npx npm-check-updates -u @superviz/react-sdk
+            yarn install
+            git add .
+            cd -
+          done
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update package
